@@ -62,6 +62,11 @@ public class Main {
                 getStatus(result.hasSerialNumber()),
                 getStatus(result.hasTeamIdentifier())
         ));
+        if (result.hasSerialNumber() || PRINT_EVERYTHING) {
+            sb
+                .append("* %s SerialNumber is 16 characters in length".formatted(getStatus(result.hasSerialNumberOfCorrectLength())))
+                .append(System.lineSeparator());
+        }
         if (result.hasAssociatedStoreIdentifiers() || result.hasAppLaunchUrl() || PRINT_EVERYTHING) {
             sb
                 .append(System.lineSeparator())
