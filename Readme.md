@@ -13,7 +13,7 @@ mvn clean package
 Pass a valid `java.nio.file.Path` to the main method.<br>
 Example (Windows):
 ```
-java --class-path "target\pkpassvalidator-java-1.0-SNAPSHOT.jar;target\lib\*" phlppnhllngr.pkpassvalidator.Main "C:\path\to\some.pkpass" 
+java --class-path "target\pkpassvalidator-java-1.0.0.jar;target\lib\*" phlppnhllngr.pkpassvalidator.Main "C:\path\to\some.pkpass" 
 ```
 
 ## Maven dependency
