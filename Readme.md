@@ -15,3 +15,24 @@ Example (Windows):
 ```
 java --class-path "target\pkpassvalidator-java-1.0-SNAPSHOT.jar;target\lib\*" phlppnhllngr.pkpassvalidator.Main "C:\path\to\some.pkpass" 
 ```
+
+## Maven dependency
+So far no `pkpassvalidator-java` package has been released.<br>
+Use [JitPack](https://jitpack.io/) to fetch a jar file built from this repository and use as library in your own project.
+```xml
+<repositories>
+    <repository>
+        <id>jitpack.io</id>
+        <url>https://jitpack.io</url>
+    </repository>
+</repositories>
+
+<dependencies>
+    <dependency>
+        <groupId>com.github.phlppnhllngr</groupId>
+        <artifactId>pkpassvalidator-java</artifactId>
+        <!-- latest commit hash -->
+        <version>ac328e1</version>
+    </dependency>
+</dependencies>
+```
