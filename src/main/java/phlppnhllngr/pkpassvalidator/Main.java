@@ -17,7 +17,7 @@ public class Main {
         System.exit(exitCode);
     }
 
-    public static boolean validate(String path) {
+    public static boolean validate(String path) throws Exception {
         byte[] passContent = Files.readAllBytes(Paths.get(path));
         ValidationResult result = new Validator().validate(passContent);
         String printable = printableResult(result);
