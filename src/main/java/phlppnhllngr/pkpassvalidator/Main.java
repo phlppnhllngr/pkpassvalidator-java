@@ -13,13 +13,16 @@ public class Main {
     private static final boolean PRINT_EVERYTHING = "true".equals(System.getProperty("pkpassvalidator.printeverything"));
 
     public static void main(String[] args) throws Exception {
-        Path path = Paths.get(args[0]);
-        byte[] passContent = Files.readAllBytes(path);
+        int exitCode = validate(args[0]) ? 1 : 0;
+        System.exit(exitCode);
+    }
+
+    public static boolean validate(String path) {
+        byte[] passContent = Files.readAllBytes(Paths.get(path));
         ValidationResult result = new Validator().validate(passContent);
         String printable = printableResult(result);
         System.out.println(printable);
-        int exitCode = printable.lines().anyMatch(line -> line.contains("ISSUE") && !line.contains("not mandatory")) ? 1 : 0;
-        System.exit(exitCode);
+        return printable.lines().noneMatch(line -> line.contains("ISSUE") && !line.contains("not mandatory"));
     }
 
     // https://github.com/tomasmcguinness/pkpassvalidator/blob/master/PassValidator.Web/Views/Home/Index.cshtml
