@@ -13,7 +13,7 @@ public class Main {
     private static final boolean PRINT_EVERYTHING = "true".equals(System.getProperty("pkpassvalidator.printeverything"));
 
     public static void main(String[] args) throws Exception {
-        int exitCode = validate(args[0]) ? 1 : 0;
+        int exitCode = validate(args[0]) ? 0 : 1;
         System.exit(exitCode);
     }
 
